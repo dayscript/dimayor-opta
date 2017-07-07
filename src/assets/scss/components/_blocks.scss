@@ -6,10 +6,11 @@
     background-color: #f6c93c;
   }
 }
-.tabs-header{
+
+.tabs-header {
+  margin-top: 30px;
   .tabs {
     border: none;
-    margin-top: 248px;
   }
   .tabs-title {
     float: left;
@@ -32,25 +33,25 @@
     color: $primary-color;
   }
 }
+
 .timeline {
   background-image: url("../img/bg-time.jpg");
   background-color: #004B8F;
-
   padding-top: 20px;
-  .info{
-     padding-top: 20px;
-   }
-  .info-l{
+  .info {
+    padding-top: 20px;
+  }
+  .info-l {
     padding-top: 20px;
     border-right: 1px solid $primary-color;
     @include breakpoint('medium') {
       border-right: 0px solid $primary-color;
     }
   }
-  .players{
+  .players {
     color: white;
     font-size: 0.7em;
-    strong{
+    strong {
       color: $primary-color;
     }
   }
@@ -70,14 +71,47 @@
       margin: 0px 8px;
     }
   }
-  .marcador{
+  .marcador {
     font-size: 3em;
     font-family: $font-bold;
     color: $primary-color;
     letter-spacing: 2px;
   }
-  .escudo{
+  .escudo {
     height: 50px;
+  }
+
+  .container-timeline {
+    padding: 40px 0;
+    .escudo{
+      width: 40px;
+      height: 40px;
+      margin: 6px;
+    }
+
+      .line {
+        display: block;
+        border-bottom: 1px solid #0f437f;
+        width: 100%;
+        position: relative;
+      }
+      .evento{
+        margin: 8px 0;
+        &.visitante{
+          margin-top: 20px;
+        }
+      }
+      .minuto{
+        color: white;
+        text-transform: uppercase;
+        font-size: 0.7em;
+        margin-right: 4px;
+        margin-left: 4px;
+        position: relative;
+        top:7px;
+        z-index: 5;
+      }
+
   }
 }
 
@@ -574,40 +608,42 @@
 
 //Menu flotante
 
-.gamecast-nav{
+.gamecast-nav {
   text-transform: uppercase;
   font-size: 0.8em;
   padding: 8px 0;
   border-bottom: 1px solid $light-gray;
-  .escudo{
+  .escudo {
     height: 22px;
     margin: 5px;
   }
-  .marcador{
+  .marcador {
     font-family: $font-bold;
     font-size: 1.2em;
     padding-top: 3px;
     &.playing {
       color: #00AA00;
     }
-    &.waiting{
+    &.waiting {
       color: $light-gray;
     }
-    &.finish{
+    &.finish {
       color: #ff0430;
     }
   }
-  &.end{
+  &.end {
     border-bottom: none;
   }
-  &.active{
+  &.active {
     background-color: #1b223f;
     color: white;
   }
 }
-.accordion-content{
+
+.accordion-content {
   padding: 0px !important;
 }
+
 .accordion {
   text-transform: uppercase;
   width: 100%;
@@ -615,20 +651,22 @@
     width: 73%;
   }
 }
-.accordion-title{
+
+.accordion-title {
   background-color: $dark-gray;
   color: white !important;
-  a{
+  a {
     color: white;
   }
 }
-.fecha{
+
+.fecha {
   text-transform: uppercase;
   color: white;
   font-size: 0.8em;
   background-color: $secondary-color;
   width: 100%;
-  padding:10px;
+  padding: 10px;
   border-left: 1px solid $light-gray;
   border-right: 1px solid $light-gray;
   border-top: 1px solid $light-gray;
@@ -638,6 +676,7 @@
     width: 73%;
   }
 }
+
 .menu-nav {
   top: auto;
   position: inherit;
