@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'Branding-Bold';
+  src: url('Branding-Bold.eot?#iefix') format('embedded-opentype'),  url('Branding-Bold.otf')  format('opentype'),
+	     url('Branding-Bold.woff') format('woff'), url('Branding-Bold.ttf')  format('truetype'), url('Branding-Bold.svg#Branding-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

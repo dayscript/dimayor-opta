@@ -1,0 +1,648 @@
+.header {
+  min-height: 78px;
+  color: white;
+  text-transform: uppercase;
+  &.liga {
+    background-color: #f6c93c;
+  }
+}
+.tabs-header{
+  .tabs {
+    border: none;
+    margin-top: 248px;
+  }
+  .tabs-title {
+    float: left;
+    width: 33%;
+    text-align: center;
+    text-transform: uppercase;
+    a {
+      color: white;
+      font-family: $font-bold;
+      background-color: $primary-color;
+      padding: 1.25rem 0.3rem;
+    }
+
+  }
+  #collapsing-tabs {
+    background-color: $primary-color;
+  }
+  .tabs-title > a:focus, .tabs-title > a[aria-selected="true"] {
+    background: white;
+    color: $primary-color;
+  }
+}
+.timeline {
+  background-image: url("../img/bg-time.jpg");
+  background-color: #004B8F;
+
+  padding-top: 20px;
+  .info{
+     padding-top: 20px;
+   }
+  .info-l{
+    padding-top: 20px;
+    border-right: 1px solid $primary-color;
+    @include breakpoint('medium') {
+      border-right: 0px solid $primary-color;
+    }
+  }
+  .players{
+    color: white;
+    font-size: 0.7em;
+    strong{
+      color: $primary-color;
+    }
+  }
+  .eventos-l {
+    display: block;
+    float: right;
+    img {
+      height: 12px;
+      margin: 0px 8px;
+    }
+  }
+  .eventos-r {
+    display: block;
+    float: left;
+    img {
+      height: 12px;
+      margin: 0px 8px;
+    }
+  }
+  .marcador{
+    font-size: 3em;
+    font-family: $font-bold;
+    color: $primary-color;
+    letter-spacing: 2px;
+  }
+  .escudo{
+    height: 50px;
+  }
+}
+
+//Comentarios
+.condensed {
+  width: 100%;
+  @include breakpoint('medium') {
+    width: 60%;
+  }
+}
+
+.comentario {
+  margin: 10px 0px 0px 0px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+
+  .minuto {
+    font-family: $font-medium;
+    color: $primary-color;
+    padding-top: 10px;
+  }
+  .coment {
+    font-size: 0.9em;
+    line-height: 18px;
+    padding: 12px;
+    margin-bottom: 12px;
+    &.destacado {
+      background-color: $primary-color;
+      color: white;
+    }
+
+  }
+  @include breakpoint('medium') {
+    text-align: left;
+  }
+}
+
+//Tabs
+.tabs-content {
+  border: 0px solid #cecece !important;
+}
+
+.tabs {
+  margin: 0;
+  border: 1px solid white;
+  background: #cecece;
+  list-style-type: none;
+}
+
+.estadisticas {
+  .tabs {
+    border: none;
+  }
+  .tabs-title {
+    float: left;
+    width: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    a {
+      color: white;
+    }
+  }
+  .tabs-title > a:focus, .tabs-title > a[aria-selected="true"] {
+    background: $dark-gray;
+    color: white;
+    font-size: 0.7em;
+    @include breakpoint('medium') {
+      font-size: 0.7em;
+    }
+  }
+  .tabs-title > a[aria-selected="false"] {
+    background: $light-gray;
+    color: white;
+    font-size: 0.7em;
+    @include breakpoint('medium') {
+      font-size: 0.7em;
+    }
+  }
+  .tabs-title > a {
+    display: block;
+    padding: 1.25rem 1.2rem;
+  }
+
+}
+
+.widgets {
+  .tabs {
+    background-color: $light-gray;
+  }
+  .tabs-title {
+    float: left;
+    width: auto;
+    text-align: center;
+    text-transform: uppercase;
+    a {
+      color: white;
+    }
+  }
+  .tabs-title > a:focus, .tabs-title > a[aria-selected="true"] {
+    background: $dark-gray;
+    color: white;
+    font-size: 0.8em;
+    @include breakpoint('medium') {
+      font-size: 0.9em;
+    }
+  }
+  .tabs-title > a[aria-selected="false"] {
+    background: $light-gray;
+    color: white;
+    font-size: 0.8em;
+    @include breakpoint('medium') {
+      font-size: 0.9em;
+    }
+  }
+
+}
+
+//Tablas
+
+.stats {
+  text-transform: uppercase;
+  font-size: 0.9em;
+  border-bottom: 1px solid #ccc;
+  padding: 12px 0px;
+  .featured {
+    color: $primary-color;
+    font-family: $font-bold;
+  }
+  .team {
+    font-family: $font-bold;
+    font-size: 0.9em;
+    @include breakpoint('medium') {
+      font-size: 1.2em;
+    }
+  }
+  .escudo-left {
+    width: 38px;
+    margin-left: 12px;
+    display: none;
+    @include breakpoint('medium') {
+      display: block;
+    }
+  }
+  .escudo-right {
+    width: 38px;
+    margin-right: 12px;
+    display: none;
+    @include breakpoint('medium') {
+      display: block;
+    }
+  }
+}
+
+.versus {
+  text-transform: uppercase;
+  padding: 2px 0px;
+
+  .info {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    strong {
+      font-weight: normal;
+      color: $primary-color;
+      margin-right: 10px;
+      display: block;
+      @include breakpoint('medium') {
+        display: initial;
+      }
+    }
+  }
+  &.historico {
+    font-size: 0.8em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 12px;
+    margin-bottom: 10px;
+    @include breakpoint('medium') {
+      padding-bottom: 0px;
+    }
+    &.destacado {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+  .escudo {
+    width: 38px;
+    margin: 12px;
+    display: none;
+    @include breakpoint('medium') {
+      display: initial;
+    }
+  }
+  .escudo-small {
+    width: 20px;
+    margin: 8px;
+    display: none;
+    @include breakpoint('medium') {
+      display: initial;
+    }
+  }
+  .escudo-recientes {
+    width: 38px;
+    margin: 8px;
+  }
+  .marcador {
+    font-family: $font-bold;
+    padding-top: 0px;
+    letter-spacing: 2px;
+    @include breakpoint('medium') {
+      padding-top: 20px;
+    }
+  }
+  .recientes {
+    text-align: center;
+    strong {
+      font-weight: normal;
+      font-family: $font-bold;
+      font-size: 1.2em;
+      margin: 0 20px;
+      &.lose {
+        color: #D81920;
+      }
+    }
+    @include breakpoint('medium') {
+      text-align: left;
+    }
+  }
+  .recientes-right {
+    text-align: center;
+    strong {
+      font-weight: normal;
+      font-family: $font-bold;
+      font-size: 1.2em;
+      margin: 0 20px;
+      &.lose {
+        color: #D81920;
+      }
+    }
+    @include breakpoint('medium') {
+      text-align: right;
+    }
+  }
+}
+
+//Jugadores
+.player {
+  border: 1px solid #CCCCCC;
+  min-width: 100%;
+  padding: 10px 10px 0px 10px;
+  .jugador {
+    float: left;
+    padding: 10px 10px 0 10px;
+    width: 100px;
+    vertical-align: bottom;
+  }
+  .name {
+    font-family: $font-bold;
+    font-size: 0.9em;
+    line-height: 16px;
+    padding-top: 20px;
+  }
+  .item {
+    font-size: 2.4em;
+    font-family: $font-bold;
+    color: $primary-color;
+  }
+}
+
+.player2 {
+  border-bottom: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  min-width: 100%;
+  height: 40px;
+  padding: 8px;
+  .name {
+    font-family: $font-bold;
+    font-size: 0.8em;
+    line-height: 18px;
+    float: left;
+  }
+  .item {
+    font-size: 0.8em;
+    font-family: $font-bold;
+    color: $primary-color;
+    float: right;
+  }
+}
+
+.button {
+  text-transform: uppercase;
+  margin: 12px auto !important;
+}
+
+//Entre equipo
+.comparacion {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  .jugados {
+    padding: 35px 0;
+  }
+  .datos, .empates {
+    text-transform: uppercase;
+    strong {
+      font-weight: normal;
+      font-family: $font-bold;
+      color: $primary-color;
+      font-size: 1.4em;
+    }
+  }
+  .partidos {
+    font-size: 5em;
+    font-family: $font-bold;
+    color: $primary-color;
+    line-height: 43px;
+    margin-bottom: 4px;
+  }
+  .escudo-left {
+    width: 38px;
+    margin-left: 12px;
+    margin-right: -10px;
+  }
+  .escudo-right {
+    width: 38px;
+    margin-right: 12px;
+    margin-left: -10px;
+  }
+  .team {
+    font-family: $font-bold;
+    font-size: 1.2em;
+  }
+  .item {
+    padding: 8px 0;
+    border-bottom: 1px solid #cccccc;
+
+    strong {
+      font-weight: normal;
+      font-family: $font-bold;
+      color: $primary-color;
+      font-size: 1.2em;
+      margin: 0px 6px;
+    }
+
+  }
+}
+
+//Alineacion
+.alineacion {
+  .team {
+    text-transform: uppercase;
+    font-family: $font-bold;
+    font-size: 1.2em;
+  }
+  .escudo {
+    width: 38px;
+    margin: 10px;
+  }
+  .tabs {
+    margin: 0;
+    border: 0px solid white !important;
+    background: $light-gray;
+    list-style-type: none;
+  }
+  .tabs-title {
+    float: left;
+    width: auto;
+    width: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    a {
+      color: white;
+    }
+  }
+  .tabs-title > a:focus, .tabs-title > a[aria-selected="true"] {
+    background: $dark-gray;
+    color: white;
+    font-size: 0.7em;
+    @include breakpoint('medium') {
+      font-size: 0.8em;
+    }
+  }
+  .tabs-title > a[aria-selected="false"] {
+    background: $light-gray;
+    color: white;
+    font-size: 0.7em;
+    @include breakpoint('medium') {
+      font-size: 0.8em;
+    }
+  }
+  .tabs-panel {
+    padding: 1rem 0;
+  }
+
+  .jugadores {
+    border-bottom: 1px solid $light-gray;
+    height: 44px;
+    width: 100%;
+    margin: 14px 0;
+    display: block;
+    a {
+      color: #222;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+    .name {
+      text-transform: uppercase;
+      font-size: 0.7em;
+      padding-top: 7px;
+      strong {
+        font-weight: normal;
+        margin: 0px 10px;
+        color: $primary-color;
+        font-family: $font-bold;
+      }
+    }
+    .player-th {
+      width: 32px;
+      height: 42px;
+      float: right;
+      margin-left: 6px;
+    }
+    .player-th2 {
+      width: 32px;
+      height: 42px;
+      float: left;
+      margin-right: 6px;
+    }
+    .eventos-l {
+      display: block;
+      float: left;
+      img {
+        height: 12px;
+        margin: 0px 3px;
+      }
+    }
+  }
+  .field {
+    .cancha {
+      margin-top: 58px;
+      position: relative;
+    }
+  }
+  .local {
+    height: 38px;
+    position: relative;
+    z-index: 6;
+    top: 420px;
+    left: 20px;
+  }
+  .visitante {
+
+    height: 38px;
+    position: relative;
+    top: 80px;
+    right: 20px;
+    z-index: 12;
+
+  }
+  .local-player {
+    display: block;
+    width: 22px;
+    height: 22px;
+    position: relative;
+    background-color: #0000AA;
+    border-radius: 20px;
+    z-index: 10;
+    color: white;
+    font-size: 0.7em;
+    font-family: $font-bold;
+    text-align: center;
+    padding-top: 2px;
+    top: 250px;
+    border: 1px solid white;
+    left: 49%;
+  }
+  .visitante-player {
+    display: block;
+    width: 22px;
+    height: 22px;
+    position: relative;
+    background-color: #00AA00;
+    border-radius: 20px;
+    z-index: 10;
+    color: white;
+    font-size: 0.7em;
+    font-family: $font-bold;
+    text-align: center;
+    padding-top: 2px;
+    top: 350px;
+    border: 1px solid white;
+    left: 49%;
+  }
+}
+
+//Menu flotante
+
+.gamecast-nav{
+  text-transform: uppercase;
+  font-size: 0.8em;
+  padding: 8px 0;
+  border-bottom: 1px solid $light-gray;
+  .escudo{
+    height: 22px;
+    margin: 5px;
+  }
+  .marcador{
+    font-family: $font-bold;
+    font-size: 1.2em;
+    padding-top: 3px;
+    &.playing {
+      color: #00AA00;
+    }
+    &.waiting{
+      color: $light-gray;
+    }
+    &.finish{
+      color: #ff0430;
+    }
+  }
+  &.end{
+    border-bottom: none;
+  }
+  &.active{
+    background-color: #1b223f;
+    color: white;
+  }
+}
+.accordion-content{
+  padding: 0px !important;
+}
+.accordion {
+  text-transform: uppercase;
+  width: 100%;
+  @include breakpoint('medium') {
+    width: 73%;
+  }
+}
+.accordion-title{
+  background-color: $dark-gray;
+  color: white !important;
+  a{
+    color: white;
+  }
+}
+.fecha{
+  text-transform: uppercase;
+  color: white;
+  font-size: 0.8em;
+  background-color: $secondary-color;
+  width: 100%;
+  padding:10px;
+  border-left: 1px solid $light-gray;
+  border-right: 1px solid $light-gray;
+  border-top: 1px solid $light-gray;
+  border-bottom: 0px solid $light-gray;
+  font-family: $font-bold;
+  @include breakpoint('medium') {
+    width: 73%;
+  }
+}
+.menu-nav {
+  top: auto;
+  position: inherit;
+  @include breakpoint('medium') {
+    top: 140px;
+    position: fixed;
+  }
+}

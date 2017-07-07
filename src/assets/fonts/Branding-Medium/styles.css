@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'Branding-Medium';
+  src: url('Branding-Medium.eot?#iefix') format('embedded-opentype'),  url('Branding-Medium.otf')  format('opentype'),
+	     url('Branding-Medium.woff') format('woff'), url('Branding-Medium.ttf')  format('truetype'), url('Branding-Medium.svg#Branding-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
