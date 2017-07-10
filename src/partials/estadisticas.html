@@ -1,14 +1,14 @@
 <hr>
 <div class="row condensed estadisticas">
     <div class="small-10 small-centered medium-6 medium-centered columns">
-        <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
-            <li class="tabs-title is-active"><a href="#equipos" aria-selected="true">Entre equipos</a></li>
+       <ul class="tabs" data-active-collapse="false" data-tabs id="estadistica">
+            <li class="tabs-title is-active"><a href="#equipo" aria-selected="true">Entre equipos</a></li>
             <li class="tabs-title"><a href="#partido">En el partido</a></li>
         </ul>
     </div>
 </div>
 
-<div class="tabs-content" data-tabs-content="collapsing-tabs">
+<div class="tabs-content" data-tabs-content="estadistica">
     <div class="tabs-panel is-active" id="equipo">
         {{> stats-team}}
     </div>
@@ -16,9 +16,6 @@
         {{> stats-match}}
     </div>
 </div>
-
-
-
 
 
 
