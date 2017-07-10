@@ -612,7 +612,7 @@
   text-transform: uppercase;
   font-size: 0.8em;
   padding: 8px 0;
-  border-bottom: 1px solid $light-gray;
+  border-bottom: 2px solid $light-gray;
   .escudo {
     height: 22px;
     margin: 5px;
@@ -637,6 +637,10 @@
   &.active {
     background-color: #1b223f;
     color: white;
+    border-left: 2px solid $light-gray;
+    border-right: 2px solid $light-gray;
+    border-top: 0px;
+    border-bottom: 0px;
   }
 }
 
@@ -655,6 +659,7 @@
 .accordion-title {
   background-color: $dark-gray;
   color: white !important;
+  border:2px solid $light-gray !important;
   a {
     color: white;
   }
@@ -667,9 +672,9 @@
   background-color: $secondary-color;
   width: 100%;
   padding: 10px;
-  border-left: 1px solid $light-gray;
-  border-right: 1px solid $light-gray;
-  border-top: 1px solid $light-gray;
+  border-left: 2px solid $light-gray;
+  border-right: 2px solid $light-gray;
+  border-top: 2px solid $light-gray;
   border-bottom: 0px solid $light-gray;
   font-family: $font-bold;
   @include breakpoint('medium') {
@@ -681,7 +686,8 @@
   top: auto;
   position: inherit;
   @include breakpoint('medium') {
-    top: 140px;
+    top: 120px;
+    left: -2px;
     position: fixed;
   }
 }

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="eb2e6322-6e54-4204-943b-2bfb8f349362" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/partials/estadisticas.html" afterPath="$PROJECT_DIR$/src/partials/estadisticas.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/scss/components/_blocks.scss" afterPath="$PROJECT_DIR$/src/assets/scss/components/_blocks.scss" />
     </list>
     <ignored path="dimayor5.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,20 +25,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_blocks.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_blocks.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assets/scss/components/_blocks.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.625">
-              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.8181818">
+              <caret line="690" column="20" selection-start-line="690" selection-start-column="20" selection-end-line="690" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="estadisticas.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/partials/menu.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="estadisticas.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/partials/estadisticas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25">
+            <state vertical-scroll-proportion="-6.875">
               <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
               <folding />
             </state>
@@ -89,10 +99,10 @@
         <option value="$PROJECT_DIR$/src/partials/alineacion.html" />
         <option value="$PROJECT_DIR$/src/assets/scss/_settings.scss" />
         <option value="$PROJECT_DIR$/src/pages/index.html" />
-        <option value="$PROJECT_DIR$/src/partials/menu.html" />
-        <option value="$PROJECT_DIR$/src/assets/scss/components/_blocks.scss" />
         <option value="$PROJECT_DIR$/src/partials/timeline.html" />
         <option value="$PROJECT_DIR$/src/partials/estadisticas.html" />
+        <option value="$PROJECT_DIR$/src/partials/menu.html" />
+        <option value="$PROJECT_DIR$/src/assets/scss/components/_blocks.scss" />
       </list>
     </option>
   </component>
@@ -650,22 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/partials/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/scss/components/_blocks.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/partials/timeline.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -678,8 +672,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/partials/estadisticas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25">
+        <state vertical-scroll-proportion="-6.875">
           <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/partials/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/components/_blocks.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8181818">
+          <caret line="690" column="20" selection-start-line="690" selection-start-column="20" selection-end-line="690" selection-end-column="20" />
           <folding />
         </state>
       </provider>
