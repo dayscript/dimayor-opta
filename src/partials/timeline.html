@@ -1,72 +1,29 @@
 <div class="timeline">
     <div class="row condensed">
-
-        <div class="small-12 medium-4 columns text-center marcador show-for-small-only"><img
-                src="assets/img/teams/nacional.png" alt="" class="escudo"> 1-3 <img
-                src="assets/img/teams/millonarios.png" alt="" class="escudo"></div>
-
-        <div class="small-6 medium-4 columns text-right info-l">
-            <div class="players">S. Hernandez <strong>´40</strong>
-
-                <div class="eventos-l"><img src="assets/img/icon/gol.png" alt=""></div>
-            </div>
-            <div class="players">J. Cardenas <strong>´40</strong>, O. Valencia <strong>´40</strong>
-
-                <div class="eventos-l"><img src="assets/img/icon/yellow-card.png" alt=""></div>
-            </div>
-        </div>
-
-        <div class="small-12 medium-4 columns text-center marcador hide-for-small-only"><img
-                src="assets/img/teams/nacional.png" alt="" class="escudo"> 1-3 <img
-                src="assets/img/teams/millonarios.png" alt="" class="escudo"></div>
-
-        <div class="small-6 medium-4 columns text-left info">
-            <div class="players">
-                <div class="eventos-r"><img src="assets/img/icon/gol.png" alt=""></div>
-                S. Hernandez <strong>´40</strong></div>
-            <div class="players">
-                <div class="eventos-r"><img src="assets/img/icon/yellow-card.png" alt=""></div>
-                J. Cardenas <strong>´40</strong>, O. Valencia <strong>´40</strong></div>
-            <div class="players">
-                <div class="eventos-r"><img src="assets/img/icon/red-card.png" alt=""></div>
-                O. Valencia <strong>´40</strong></div>
-        </div>
-    </div>
-    <div class="row condensed container-timeline hide-for-small-only">
-        <div class="medium-1 columns">
-            <diw class="row">
-                <div class="medium-12 columns"><img src="assets/img/teams/nacional.png" alt="" class=""></div>
-                <div class="medium-12 columns"><img src="assets/img/teams/millonarios.png" alt="" class=""></div>
-            </diw>
-        </div>
-
-        <div class="medium-11 columns tiempo">
-            <img src="assets/img/icon/yellow-card.png" alt="" class="evento">
-            <div class="minuto">1</div>
-            <div class="line"></div>
-            <img src="assets/img/icon/red-card.png" alt="" class="evento visitante">
-        </div>
+      <div class="columns" id="opta-w-timeline">
+        <opta-widget ccclass="opta-widget" load="false" sport="football" widget="timeline" competition="371" season="2017" match="902873" template="normal" live="false" orientation="horizontal" vertical_timebar_height="260" show_match_header="true" show_score="true" show_crests="true" show_assists="none" show_team_formation="true" show_clock="true" show_period_dividers="true" show_halftime_score="false" show_date="false" date_format="dddd D MMMM YYYY" show_attendance="false" show_images="true" show_referee="false" show_venue="false" show_cards="all" show_goals="true" show_penalties_missed="true" show_subs="true" show_goals_combined="false" show_shootouts="true" show_competition_name="false" competition_naming="full" team_naming="full" player_naming="full" show_live="false" show_logo="true" show_title="true" title=" " breakpoints="400, 767, 991, 1170"></opta-widget>
+        <opta-widget ccclass="opta-widget" load="false" sport="football" widget="match_summary" competition="371" season="2017" match="902873" template="normal" live="false" show_match_header="false" show_score="true" show_attendance="true" show_date="true" date_format="dddd D MMMM YYYY HH:mm" show_cards="all" show_crests="true" show_team_formation="true" show_goals="true" show_goals_combined="false" show_penalties_missed="true" show_halftime_score="false" show_referee="true" show_subs="true" show_venue="true" show_shootouts="true" show_tooltips="false" show_images="false" show_competition_name="true" competition_naming="full" team_naming="full" player_naming="full" show_live="false" show_logo="false" show_title="false" breakpoints="400, 767, 991, 1170"></opta-widget>
+      </div>
     </div>
     <div class="row tabs-header">
         <div class="small-12 small-centered medium-6 medium-centered columns">
-            <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
-                <li class="tabs-title is-active"><a href="#juego" aria-selected="true">En juego</a></li>
-                <li class="tabs-title"><a href="#alineaciones">Alineaciones</a></li>
-                <li class="tabs-title"><a href="#estadisticas">Estadisticas</a></li>
+            <ul id="tabs-statistics" class="tabs" data-tabs>
+              <li class="tabs-title is-active"><a href="#juego" aria-selected="true">En juego</a></li>
+              <li class="tabs-title"><a href="#alineaciones">Alineaciones</a></li>
+              <li class="tabs-title"><a href="#estadisticas">Estadísticas</a></li>
             </ul>
         </div>
     </div>
 </div>
 <hr>
-<div class="tabs-content" data-tabs-content="collapsing-tabs">
+<div class="tabs-content" data-tabs-content="tabs-statistics">
     <div class="tabs-panel is-active" id="juego">
         {{> comentarios}}
     </div>
     <div class="tabs-panel" id="alineaciones">
         {{> alineacion}}
     </div>
-    <div class="tabs-panel" id="estadisticas">
+    <div class="tabs-panel" id="estadisticas" data-children="estadisticas">
         {{> estadisticas}}
     </div>
 </div>
-

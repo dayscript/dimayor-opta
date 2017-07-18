@@ -1,5 +1,7 @@
 import $ from 'jquery';
 import whatInput from 'what-input';
+import dimayor from './custom/dimayor';
+// var dimayor = require('./custom/dimayor');
 
 window.$ = $;
 
@@ -10,4 +12,4 @@ import Foundation from 'foundation-sites';
 
 
 $(document).foundation();
-
+dimayor.start();

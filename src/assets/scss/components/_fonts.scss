@@ -8,6 +8,14 @@
 
 @font-face {
   font-family: 'Branding-Medium';
+  src: url('../fonts/Branding-Bold/Branding-Bold.eot?#iefix') format('embedded-opentype'),  url('../fonts/Branding-Bold/Branding-Bold.otf')  format('opentype'),
+  url('../fonts/Branding-Bold/Branding-Bold.woff') format('woff'), url('../fonts/Branding-Bold/Branding-Bold.ttf')  format('truetype'), url('../fonts/Branding-Bold/Branding-Bold.svg#Branding-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Branding-Medium';
   src: url('../fonts/Branding-Medium/Branding-Medium.eot?#iefix') format('embedded-opentype'),  url('../fonts/Branding-Medium/Branding-Medium.otf')  format('opentype'),
   url('../fonts/Branding-Medium/Branding-Medium.woff') format('woff'), url('.../fonts/Branding-Medium/Branding-Medium.ttf')  format('truetype'), url('../fonts/Branding-Medium/Branding-Medium.svg#Branding-Medium') format('svg');
   font-weight: normal;

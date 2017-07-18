@@ -3,7 +3,7 @@
   color: white;
   text-transform: uppercase;
   &.liga {
-    background-color: #f6c93c;
+    background-color: $orange-1;
   }
 }
 
@@ -14,7 +14,7 @@
   }
   .tabs-title {
     float: left;
-    width: 33%;
+    width: 33.3333%;
     text-align: center;
     text-transform: uppercase;
     a {
@@ -25,7 +25,7 @@
     }
 
   }
-  #collapsing-tabs {
+  #tabs-statistics {
     background-color: $primary-color;
   }
   .tabs-title > a:focus, .tabs-title > a[aria-selected="true"] {
@@ -35,9 +35,12 @@
 }
 
 .timeline {
-  background-image: url("../img/bg-time.jpg");
-  background-color: #004B8F;
+//  background-image: url("../img/bg-time.jpg");
+//  background-color: #004B8F;
+//  background-size: auto 100%;
+  background: linear-gradient(to bottom, rgba(0,22,62,1) 0%,rgba(2,75,147,1) 100%);
   padding-top: 20px;
+  
   .info {
     padding-top: 20px;
   }
@@ -613,6 +616,15 @@
   font-size: 0.8em;
   padding: 8px 0;
   border-bottom: 2px solid $light-gray;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  
+  &:hover
+  {
+    color: inherit;
+  }
+
   .escudo {
     height: 22px;
     margin: 5px;
