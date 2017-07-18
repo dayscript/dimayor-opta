@@ -698,8 +698,22 @@
   top: auto;
   position: inherit;
   @include breakpoint('medium') {
-    top: 120px;
+    top: 200px;
     left: -2px;
     position: fixed;
+  }
+}
+.dimayor{
+  background-color: #1c2141;
+  padding: 10px 0;
+}
+.footer{
+  background-color: black;
+  padding: 18px 0;
+  color: white;
+  font-size: 0.8em;
+  text-align: center;
+  a{
+    color: white;
   }
 }
