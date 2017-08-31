@@ -2,17 +2,17 @@
 <div class="row condensed estadisticas">
     <div class="small-10 small-centered medium-6 medium-centered columns">
        <ul class="tabs" data-active-collapse="false" data-tabs id="estadistica">
-            <li class="tabs-title is-active"><a href="#equipo" aria-selected="true">Entre equipos</a></li>
-            <li class="tabs-title"><a href="#partido">En el partido</a></li>
+            <li class="tabs-title is-active"><a href="#partido">En el partido</a></li>
+            <li class="tabs-title"><a href="#equipo" aria-selected="true">Entre equipos</a></li>
         </ul>
     </div>
 </div>
 
 <div class="tabs-content" data-tabs-content="estadistica">
-    <div class="tabs-panel is-active" id="equipo">
-        {{> stats-team}}
-    </div>
-    <div class="tabs-panel" id="partido" data-children="partido">
+    <div class="tabs-panel is-active" id="partido" data-children="equipo">
         {{> stats-match}}
+    </div>
+    <div class="tabs-panel" id="equipo">
+        {{> stats-team}}
     </div>
 </div>

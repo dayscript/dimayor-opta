@@ -1,8 +1,9 @@
+// HalfTime, FirstHalf, SecondHalf
 import $ from 'jquery';
 import Vue from 'vue/dist/vue.min';
 
-var SERVICES = 'https://s3-us-west-2.amazonaws.com/dimayor-opta-feeds/';
-//var SERVICES = 'https://jupiter.binit.co/opta/';
+var SERVICES = 'https://s3-us-west-2.amazonaws.com/dimayor-opta-feeds/',
+    OPTA_IMAGES = 'http://omo.akamai.opta.net/image.php?h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=__SIZE__&id=__ID__';
 
 var Dimayor = (function(my){
   "use strict";
@@ -12,6 +13,7 @@ var Dimayor = (function(my){
       my.VM.start();
       my.Opta.start();
       configTabs();
+      configPlayerProfile();
     });
   };
   
@@ -21,6 +23,45 @@ var Dimayor = (function(my){
       setTimeout(function(){
         Dimayor.Opta.startWidget(t);
       });
+    });
+  }
+  
+  function configPlayerProfile(){
+    var comp = Util.param('competition'),
+			season = Util.param('season'),
+			round = Util.param('round');
+
+    $('#matchstats-lineups').on('click', '.Opta-Player', function(){
+      var team, player;
+      this.parentNode.classList.forEach(function(v,i){
+        if(v.indexOf('Opta-Team-') === 0){
+          team = v.replace('Opta-Team-', '');
+        }
+      });
+      
+      this.classList.forEach(function(v,i){
+        if(v.indexOf('Opta-Player-') === 0){
+          player = v.replace('Opta-Player-', '');
+        }
+      });
+      
+      var html = '<opta-widget sport="football" widget="player_profile" competition="' + comp + '" season="' + season + '" team="' + team + '" player="' + player + '" template="normal" show_images="true" show_country="true" show_flags="true" date_format="D MMMM YYYY" height_units="m" weight_units="kg" player_naming="full" show_logo="false" show_title="true" breakpoints="400"></opta-widget>';
+      $('#modal-player .modal-content').html(html);
+      
+      $('#modal-player').removeClass('hide');
+      setTimeout(function(){
+        $('#modal-player').addClass('show');
+        Opta.start();
+      }, 50);
+      
+    });
+    
+    $('#modal-player BUTTON.close').on('click', function(){
+      $('#modal-player').removeClass('show');
+      setTimeout(function(){
+        $('#modal-player').addClass('hide');
+        $('#modal-player .modal-content').html('');
+      }, 500);
     });
   }
   
@@ -97,7 +138,8 @@ Dimayor.VM = (function(){
     var data = { 
       comp: Util.param('competition'),
       season: Util.param('season'),
-      round: Util.param('round')
+      round: Util.param('round'),
+      opta_images: OPTA_IMAGES,
     };
 
     Vue.component('menu-match', {
@@ -106,10 +148,10 @@ Dimayor.VM = (function(){
         return data;
       },
 			template: '\
-<a class="row gamecast-nav" :href="\'?&competition=\'+comp+\'&season=\'+season+\'&round=\'+round+\'&match=\'+match.id">\
-	<div class="small-5 text-right"><img :src="\'http://omo.akamai.opta.net/image.php?h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=\' + match.home.id" alt="" class="escudo"></div>\
+<a class="row gamecast-nav" :class="match.period" :href="\'?&competition=\'+comp+\'&season=\'+season+\'&round=\'+round+\'&match=\'+match.id">\
+	<div class="small-5 text-right">{{match.home.name.substring(0,3)}}<img :src="opta_images.replace(\'__ID__\', match.home.id).replace(\'__SIZE__\', 20)" alt="" class="escudo"></div>\
 	<div class="small-2 text-center marcador">{{ match.home.score }} - {{ match.away.score }}</div>\
-	<div class="small-5 text-left"><img :src="\'http://omo.akamai.opta.net/image.php?h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=\' + match.away.id" alt="" class="escudo"></div>\
+	<div class="small-5 text-left"><img :src="opta_images.replace(\'__ID__\', match.away.id).replace(\'__SIZE__\', 20)" alt="" class="escudo">{{match.away.name.substring(0,3)}}</div>\
 </a>'
 		});
 
@@ -164,28 +206,36 @@ Dimayor.VM = (function(){
 Dimayor.Opta = (function(){
   "use strict";
   
-  var my = {};
+  var my = {}, _live = false;
   
   my.start = function(){
-    configWidgets();
+    configWidgets(function(){
 
-    my.startWidget($('#opta-w-timeline'));
-    my.startWidget($('#juego'));
+      my.startWidget($('#opta-w-timeline'));
+      my.startWidget($('#juego'));
+
+    });
   };
 
   //Private
-  function configWidgets(){
-    var comp = Util.param('competition'),
-        season = Util.param('season'),
-        match = Util.param('match');
+  function configWidgets(fn){
+    configureMatchWidget(function(live){
+      var comp = Util.param('competition'),
+          season = Util.param('season'),
+          match = Util.param('match'),
+          live = live ? 'true' : 'false';
 
-    $('opta-widget').each(function(){
-      this.setAttribute('competition', comp);
-      this.setAttribute('match', match);
-      this.setAttribute('season', season);
-      this.setAttribute('breakpoints', '400, 767, 991, 1170');
+      $('opta-widget').each(function(){
+        this.setAttribute('competition', comp);
+        this.setAttribute('match', match);
+        this.setAttribute('season', season);
+        this.setAttribute('breakpoints', '400, 767, 991, 1170');
+        this.setAttribute('live', live);
+      });
+      
+      fn&&fn();
+
     });
-
   };
 
   my.startWidget = function($parent){
@@ -202,6 +252,29 @@ Dimayor.Opta = (function(){
     Opta.start();
   }
 
+  function configureMatchWidget(fn){
+    var comp = Util.param('competition'),
+			season = Util.param('season'),
+			match = Util.param('match');
+    
+    Util.getFeed('schedules/' + comp + '/' + season + '/matches/' + match + '.json', function(j){
+      var $w = $('opta-widget.season-team-stats');
+      
+      $w[0].setAttribute('team', j.home.id);
+      $w[1].setAttribute('team', j.away.id);
+      
+      $('.logo-team-home').each(function(){
+        this.src = OPTA_IMAGES.replace('__ID__', j.home.id).replace('__SIZE__', '65');
+      });
+      
+      $('.logo-team-away').each(function(){
+        this.src = OPTA_IMAGES.replace('__ID__', j.away.id).replace('__SIZE__', '65');
+      });
+      
+      fn&&fn(j.period != 'PreMatch' && j.period != 'FullTime');
+		});
+  }
+  
   return my;
 
 })(Dimayor||{});

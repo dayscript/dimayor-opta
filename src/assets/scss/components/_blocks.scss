@@ -620,6 +620,22 @@
   color: inherit;
   text-decoration: none;
   
+  &.FullTime
+  {
+    .marcador
+    {
+      color: #266bcf;
+    }
+  }
+  
+  &.PreMatch
+  {
+    .marcador
+    {
+      color: $light-gray;
+    }
+  }
+  
   &:hover
   {
     color: inherit;
@@ -633,6 +649,8 @@
     font-family: $font-bold;
     font-size: 1.2em;
     padding-top: 3px;
+    color: #00AA00;
+
     &.playing {
       color: #00AA00;
     }

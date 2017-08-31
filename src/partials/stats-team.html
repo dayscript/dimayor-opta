@@ -6,73 +6,33 @@
 <div class="row condensed">
 
 </div>
+<div id="team-compare" class="row condensed">
+  <opta-widget load="false" sport="football" widget="team_compare" competition="371,371" season="2017,2017" team="7585,2669" template="dual" navigation="concertina" default_nav="1" show_selects="false" show_crests="true" competition_naming="full" team_naming="false" show_logo="false" show_title="false" breakpoints="400"></opta-widget>
+</div>
+
 <div class="row condensed comparacion">
-  <opta-widget parent="estadisticas" load="false" sport="football" widget="match_preview" competition="" season="" match="" template="normal" navigation="tabs_more" default_nav="1" show_match_header="false" show_crests="true" show_competition_name="false" show_venue="false" show_date="false" date_format="dddd D MMMM YYYY" time_format="HH:mm" show_form="6" show_fixtures="6" show_previous_meetings="6" show_top_scorers="6" show_tied_scorers="true" show_images="true" competition_naming="full" team_naming="full" player_naming="full" show_logo="false" show_title="false" breakpoints="400, 767, 991, 1170"></opta-widget>
+    <div class="small-12 columns title text-center">
+        <h5 class="title">Enfrentamientos recientes</h5>
+    </div>
+    <opta-widget load="false" sport="football" widget="match_preview" competition="" season="" match="" template="normal" navigation="tabs_more" default_nav="2" show_match_header="false" show_crests="true" show_competition_name="false" show_venue="false" show_date="false" date_format="dddd D MMMM YYYY" time_format="HH:mm" show_form="6" show_fixtures="6" show_previous_meetings="6" show_top_scorers="6" show_tied_scorers="true" show_images="true" competition_naming="full" team_naming="full" player_naming="full" show_logo="false" show_title="false" breakpoints="400, 767, 991, 1170"></opta-widget>
 </div>
 <hr>
-<!--jugadores -->
-<div class="row condensed">
+
+<div class="row condensed comparacion">
     <div class="small-12 columns title text-center">
-        <h5 class="title">Jugadores destacados</h5>
+        <h5 class="title">Rendimiento en el torneo</h5>
     </div>
-</div>
-<div class="row condensed">
-    <div class="small-12 medium-4 columns">
-        <h5 class="title">Goleadores</h5>
-
-        <div class="player">
-            <img src="assets/img/test/jugador1.jpg" alt="" class="jugador">
-
-            <div class="name">10. Juan Alberto Quintero</div>
-            <div class="item">23</div>
-        </div>
-        <div class="player2">
-            <div class="name">4. Juan Carlos Lopez</div>
-            <div class="item">20</div>
-        </div>
-        <div class="player2">
-            <div class="name">12. James Rodriguez</div>
-            <div class="item">8</div>
-        </div>
-        <a href="#" class="button expanded">Ver tabla</a>
+    <div class="small-12 medium-6 columns">
+      <div class="text-center">
+        <img class="logo-team-home" src="">
+      </div>
+      <opta-widget load="false" class="season-team-stats" sport="football" widget="season_team_stats" competition="371" season="2017" team="7585" template="normal" navigation="concertina" default_nav="1" show_general="true" show_distribution="true" show_attack="true" show_defence="true" show_discipline="true" team_naming="full" show_logo="false" show_title="false" breakpoints="400"></opta-widget>
     </div>
-    <div class="small-12 medium-4 columns">
-        <h5 class="title">Asistencias</h5>
-
-        <div class="player">
-            <img src="assets/img/test/jugador1.jpg" alt="" class="jugador">
-
-            <div class="name">10. Juan Alberto Quintero</div>
-            <div class="item">23</div>
-        </div>
-        <div class="player2">
-            <div class="name">4. Juan Carlos Lopez</div>
-            <div class="item">20</div>
-        </div>
-        <div class="player2">
-            <div class="name">12. James Rodriguez</div>
-            <div class="item">8</div>
-        </div>
-        <a href="#" class="button expanded">Ver tabla</a>
-    </div>
-    <div class="small-12 medium-4 columns">
-        <h5 class="title">Faltas</h5>
-
-        <div class="player">
-            <img src="assets/img/test/jugador1.jpg" alt="" class="jugador">
-
-            <div class="name">10. Juan Alberto Quintero</div>
-            <div class="item">23</div>
-        </div>
-        <div class="player2">
-            <div class="name">4. Juan Carlos Lopez</div>
-            <div class="item">20</div>
-        </div>
-        <div class="player2">
-            <div class="name">12. James Rodriguez</div>
-            <div class="item">8</div>
-        </div>
-        <a href="#" class="button expanded">Ver tabla</a>
-    </div>
+    <div class="small-12 medium-6 columns">
+      <div class="text-center">
+        <img class="logo-team-away" src="">
+      </div>
+      <opta-widget load="false" class="season-team-stats" sport="football" widget="season_team_stats" competition="371" season="2017" team="7585" template="normal" navigation="concertina" default_nav="1" show_general="true" show_distribution="true" show_attack="true" show_defence="true" show_discipline="true" team_naming="full" show_logo="false" show_title="false" breakpoints="400"></opta-widget>
+    </div>    
 </div>
 <hr>
