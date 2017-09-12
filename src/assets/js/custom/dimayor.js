@@ -219,19 +219,30 @@ Dimayor.Opta = (function(){
 
   //Private
   function configWidgets(fn){
-    configureMatchWidget(function(live){
+    configureMatchWidget(function(opt){
       var comp = Util.param('competition'),
           season = Util.param('season'),
           match = Util.param('match'),
-          live = live ? 'true' : 'false';
+          live = opt.live ? 'true' : 'false';
 
       $('opta-widget').each(function(){
         this.setAttribute('competition', comp);
         this.setAttribute('match', match);
         this.setAttribute('season', season);
         this.setAttribute('breakpoints', '400, 767, 991, 1170');
-        this.setAttribute('live', live);
+        this.setAttribute('live', opt.live);
       });
+      
+      // Teams compare widgets
+      $('.team-compare').each(function(){
+        this.setAttribute('competition', comp + ',' + comp);
+        this.setAttribute('team', opt.teams.home.id + ',' + opt.teams.guest.id);
+        this.setAttribute('season', season + ',' + season);
+//        this.setAttribute('breakpoints', '400, 767, 991, 1170');
+//        this.setAttribute('live', live);
+      });
+
+
       
       fn&&fn();
 
@@ -260,6 +271,7 @@ Dimayor.Opta = (function(){
     Util.getFeed('schedules/' + comp + '/' + season + '/matches/' + match + '.json', function(j){
       var $w = $('opta-widget.season-team-stats');
       
+      // Teams widget
       $w[0].setAttribute('team', j.home.id);
       $w[1].setAttribute('team', j.away.id);
       
@@ -271,7 +283,11 @@ Dimayor.Opta = (function(){
         this.src = OPTA_IMAGES.replace('__ID__', j.away.id).replace('__SIZE__', '65');
       });
       
-      fn&&fn(j.period != 'PreMatch' && j.period != 'FullTime');
+      var ret = {
+	      live: (j.period != 'PreMatch' && j.period != 'FullTime'),
+	      teams: {home:j.home, guest: j.away}
+      };
+      fn&&fn(ret);
 		});
   }
   
